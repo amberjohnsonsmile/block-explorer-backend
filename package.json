@@ -6,10 +6,19 @@
   "author": "Amber Johnson",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "knex": "^0.16.3",
+    "pg": "^7.8.0",
     "prettier": "^1.16.4",
     "tslint": "^5.12.1",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
   }
 }
