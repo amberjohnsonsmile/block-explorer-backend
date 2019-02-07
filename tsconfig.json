@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "module": "commonjs",
+    "target": "es2017",
+    "strict": true,
+    "sourceMap": true,
+    "declaration": false,
+    "newLine": "lf",
+    "keyofStringsOnly": true,
+    "baseUrl": ".",
+    "paths": {
+      "common": [
+        "modules/common/src"
+      ]
+    }
+  },
+  "include": [
+    "*"
+  ]
+}
