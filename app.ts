@@ -7,7 +7,7 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.get('/', (request, response) => {
-  response.json("hello")
+  response.json('hello')
 })
 
 app.listen(process.env.PORT || 3000)

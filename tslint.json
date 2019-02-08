@@ -1,9 +1,4 @@
 {
-  "linterOptions": {
-    "exclude": [
-      "modules/*/test/tests/**"
-    ]
-  },
   "extends": [
     "tslint-config-airbnb",
     "tslint-plugin-prettier"
