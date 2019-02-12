@@ -8,14 +8,18 @@
     "declaration": false,
     "newLine": "lf",
     "keyofStringsOnly": true,
-    "baseUrl": ".",
-    "paths": {
-      "common": [
-        "modules/common/src"
-      ]
-    }
+    "baseUrl": "."
   },
   "include": [
-    "*"
+    "*",
+    "scripts/app.ts",
+    "config/knexfile.js",
+    "config/knexfile.ts",
+    "config/database-connection.ts",
+    "config/database-connection.js.js",
+    "src/queries.ts",
+    "src/queries.js",
+    "src/web3.ts",
+    "src/web3.js"
   ]
 }
