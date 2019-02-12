@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node scripts/app.js",
+    "dev": "nodemon scripts/app.js"
   },
   "repository": "git@github.com:amberjohnsonsmile/block-explorer-backend.git",
   "author": "Amber Johnson",
