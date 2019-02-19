@@ -14,12 +14,9 @@
     "*",
     "scripts/app.ts",
     "scripts/scanner.ts",
-    "database/knexfile.ts",
     "database/database-connection.ts",
-    "config/database-connection.js.js",
-    "src/queries.ts",
-    "src/queries.js",
-    "src/web3.ts",
-    "src/web3.js"
+    "database/knexfile.ts",
+    "database/queries.ts",
+    "src/web3.ts"
   ]
 }
