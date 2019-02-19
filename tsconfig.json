@@ -13,6 +13,7 @@
   "include": [
     "*",
     "scripts/app.ts",
+    "scripts/scanner.ts",
     "config/knexfile.js",
     "config/knexfile.ts",
     "config/database-connection.ts",
