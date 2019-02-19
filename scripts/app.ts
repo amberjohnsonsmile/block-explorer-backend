@@ -11,9 +11,12 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.get('/', (request, response) => {
+  const blocks: Block[] = []
+
   web3.eth.getBlockNumber().then((blockNumber: Number) => {
     web3.eth.getBlock(blockNumber).then((block: Block) => {
-      response.json(block)
+      blocks.push(block)
+      response.json(blocks)
     })
   })
 })
