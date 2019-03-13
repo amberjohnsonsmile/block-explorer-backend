@@ -28,6 +28,10 @@
     "web3": "^1.0.0-beta.44"
   },
   "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
     "nodemon": "^1.18.9"
   }
 }
