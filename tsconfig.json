@@ -18,6 +18,7 @@
     "database/knexfile.ts",
     "database/queries.ts",
     "src/web3.ts",
-    "test/web3-test.ts"
+    "test/web3-test.ts",
+    "test/database-test.ts"
   ]
 }

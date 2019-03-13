@@ -1,13 +1,14 @@
-const database = require('./database-connection')
+import { Connection } from '../database/database-connection'
+const database = new Connection().knex()
 
 module.exports = {
-  list(table) {
+  list(table: string) {
     return database(table)
   },
-  create(table, body) {
+  create(table: string, body: any) {
     return database(table)
       .insert(body)
       .returning('*')
-      .then(record => record[0])
+      .then((record: any) => record[0])
   }
 }
