@@ -6,6 +6,7 @@ module.exports = {
     return database(table)
   },
   create(table: string, body: any) {
+    console.log('creating')
     return database(table)
       .insert(body)
       .returning('*')

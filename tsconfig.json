@@ -17,7 +17,8 @@
     "database/database-connection.ts",
     "database/knexfile.ts",
     "database/queries.ts",
-    "src/web3.ts",
+    "src/format.ts",
+    "src/types.ts",
     "test/web3-test.ts",
     "test/database-test.ts"
   ]

@@ -9,6 +9,7 @@ describe('database', function() {
 
     const web3 = new Web3(process.env.GETH_URL)
     const block = await web3.eth.getBlock(6000000)
+    const formattedBlock = formatBlock(block)
 
     await Queries.create('blocks', block)
   })
