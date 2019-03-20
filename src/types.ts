@@ -14,7 +14,7 @@ export interface EthereumBlock {
   size: number
   stateRoot: string
   timestamp: string
-  totalDifficulty: BigInteger
+  totalDifficulty: number
   transactionsRoot: string
   uncles: string
 }

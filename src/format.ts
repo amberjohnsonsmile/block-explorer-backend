@@ -1,8 +1,7 @@
-import { BigNumber } from 'bignumber.js'
 import { EthereumBlock } from './types'
 import { Block } from 'web3/eth/types'
 
-function formatBlock(block: Block): EthereumBlock {
+export function formatBlock(block: Block): EthereumBlock {
   return {
     number: block.number,
     difficulty: block.difficulty,
@@ -21,6 +20,6 @@ function formatBlock(block: Block): EthereumBlock {
     timestamp: block.timestamp.toString(),
     totalDifficulty: block.totalDifficulty,
     transactionsRoot: block.transactionRoot,
-    uncles: block.uncles
+    uncles: block.uncles.toString()
   }
 }
