@@ -1,6 +1,6 @@
 export interface EthereumBlock {
   number: number
-  difficulty: BigInteger
+  difficulty: number
   extraData: string
   gasLimit: number
   gasUsed: number

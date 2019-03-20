@@ -1,3 +1,4 @@
+import { BigNumber } from 'bignumber.js'
 import { EthereumBlock } from './types'
 import { Block } from 'web3/eth/types'
 
@@ -17,7 +18,7 @@ function formatBlock(block: Block): EthereumBlock {
     sha3Uncles: block.sha3Uncles,
     size: block.size,
     stateRoot: block.stateRoot,
-    timestamp: block.timestamp,
+    timestamp: block.timestamp.toString(),
     totalDifficulty: block.totalDifficulty,
     transactionsRoot: block.transactionRoot,
     uncles: block.uncles
