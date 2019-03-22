@@ -19,7 +19,8 @@
     "database/queries.ts",
     "src/format.ts",
     "src/types.ts",
-    "test/web3-test.ts",
-    "test/database-test.ts"
+    "test/integration/scanning-test.ts",
+    "test/unit/web3-test.ts",
+    "test/unit/database-test.ts"
   ]
 }

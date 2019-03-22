@@ -1,6 +1,7 @@
+import { BlockHeader } from 'web3/eth/types'
+
 export interface EthereumBlock {
   number: number
-  difficulty: number
   extraData: string
   gasLimit: number
   gasUsed: number
@@ -11,10 +12,12 @@ export interface EthereumBlock {
   parentHash: string
   receiptsRoot: string
   sha3Uncles: string
-  size: number
   stateRoot: string
   timestamp: string
-  totalDifficulty: number
   transactionsRoot: string
-  uncles: string
+}
+
+export interface Web3Block extends BlockHeader {
+  receiptsRoot: string
+  transactionsRoot: string
 }

@@ -2,6 +2,9 @@ import { Connection } from '../database/database-connection'
 const database = new Connection().knex()
 
 module.exports = {
+  reset(table: string) {
+    return database(table).del()
+  },
   list(table: string) {
     return database(table)
   },
