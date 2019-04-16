@@ -3,6 +3,7 @@ import bodyParser = require('body-parser')
 import cors = require('cors')
 import { formatBlock } from '../src/format'
 import { Web3Block, EthereumBlock } from '../src/types'
+const queries = require('../database/queries')
 const Web3 = require('web3')
 require('dotenv').config()
 
@@ -11,15 +12,13 @@ const app = express()
 app.use(bodyParser.json())
 app.use(cors())
 
-app.get('/', (request, response) => {
-  const blocks: EthereumBlock[] = []
-
-  web3.eth.getBlockNumber().then((blockNumber: Number) => {
-    web3.eth.getBlock(blockNumber).then((block: Web3Block) => {
-      blocks.push(formatBlock(block))
-      response.json(blocks)
-    })
-  })
+app.get('/', async (request, response) => {
+  try {
+    const blocks: EthereumBlock[] = await queries.list('blocks')
+    response.json(blocks)
+  } catch {
+    response.json({ error: 'Database error' })
+  }
 })
 
 app.listen(process.env.PORT || 3001)

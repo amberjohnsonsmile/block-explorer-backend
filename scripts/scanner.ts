@@ -1,13 +1,28 @@
+import { EthereumBlock } from '../src/types'
+import { formatBlock } from '../src/format'
+
 const Web3 = require('web3')
 const queries = require('../database/queries')
 require('dotenv').config()
 const web3 = new Web3(process.env.GETH_URL)
 
 async function main() {
-  const latestBlock = await web3.eth.getBlockNumber()
-  const block = await web3.eth.getBlock(latestBlock)
+  const highestDatabaseBlock = await queries.getHighest('blocks')
 
-  await queries.create('blocks', block)
+  let current = highestDatabaseBlock ? highestDatabaseBlock + 1 : 7000000
+  const highestEthBlock = await web3.eth.getBlockNumber()
+
+  while (current < highestEthBlock) {
+    const blocks: EthereumBlock[] = []
+    for (let i = 0; i < 10; i++) {
+      const block = await web3.eth.getBlock(current)
+      blocks.push(formatBlock(block))
+      current++
+    }
+
+    await queries.create('blocks', blocks)
+    console.log(`Saved blocks ${blocks.map(b => b.number).join(', ')}`)
+  }
 }
 
 main()

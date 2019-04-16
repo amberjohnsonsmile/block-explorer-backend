@@ -24,6 +24,14 @@ describe('database', function() {
       'The block should have the correct hash'
     )
   })
+
+  it('can get highest block in db', async function() {
+    await Queries.reset('blocks')
+    await Queries.create('blocks', block)
+    const highestBlock = await Queries.getHighest('blocks')
+
+    assert.equal(highestBlock, 6000000, 'The highest block should be 6000000')
+  })
 })
 
 const block: EthereumBlock = {

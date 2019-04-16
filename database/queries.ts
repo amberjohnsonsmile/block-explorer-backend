@@ -6,12 +6,18 @@ module.exports = {
     return database(table).del()
   },
   list(table: string) {
-    return database(table)
+    return database(table).orderBy('number', 'desc')
   },
   create(table: string, body: any) {
     return database(table)
       .insert(body)
       .returning('*')
       .then((record: any) => record[0])
+  },
+  getHighest(table: string) {
+    return database(table)
+      .max('number')
+      .returning('number')
+      .then((record: any) => record[0].max)
   }
 }
