@@ -6,7 +6,7 @@ const queries = require('../database/queries')
 require('dotenv').config()
 const web3 = new Web3(process.env.GETH_URL)
 
-async function main() {
+export async function scan() {
   const highestDatabaseBlock = await queries.getHighest('blocks')
 
   let current = highestDatabaseBlock ? highestDatabaseBlock + 1 : 7000000
@@ -25,4 +25,4 @@ async function main() {
   }
 }
 
-main()
+scan()

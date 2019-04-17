@@ -3,6 +3,7 @@ import bodyParser = require('body-parser')
 import cors = require('cors')
 import { formatBlock } from '../src/format'
 import { Web3Block, EthereumBlock } from '../src/types'
+import { scan } from './scanner'
 const queries = require('../database/queries')
 const Web3 = require('web3')
 require('dotenv').config()
@@ -26,4 +27,5 @@ app.get('/', async (request, response) => {
   }
 })
 
+scan()
 app.listen(process.env.PORT || 3001)

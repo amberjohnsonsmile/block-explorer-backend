@@ -1,7 +1,7 @@
 {
   "name": "block-explorer-backend",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "scripts/app.js",
   "scripts": {
     "start": "node scripts/app.js",
     "dev": "nodemon scripts/app.js"
