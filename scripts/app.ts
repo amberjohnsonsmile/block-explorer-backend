@@ -17,7 +17,12 @@ app.get('/', async (request, response) => {
     const blocks: EthereumBlock[] = await queries.list('blocks')
     response.json(blocks)
   } catch {
-    response.json({ error: 'Database error' })
+    response.status(500)
+    response.json({
+      error: {
+        message: 'Database error'
+      }
+    })
   }
 })
 
