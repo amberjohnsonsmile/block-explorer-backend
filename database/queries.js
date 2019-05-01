@@ -7,7 +7,7 @@ module.exports = {
         return database(table).del();
     },
     list(table) {
-        return database(table).orderBy('number', 'desc');
+        return database(table).orderBy('number', 'desc').limit(30);
     },
     create(table, body) {
         return database(table)
