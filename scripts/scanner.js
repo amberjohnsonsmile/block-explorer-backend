@@ -16,7 +16,10 @@ async function scan() {
             blocks.push(format_1.formatBlock(block));
             current++;
         }
-        await queries.deleteOldBlocks('blocks');
+        const blockCount = await queries.getBlockCount('blocks');
+        if (blockCount >= 10000) {
+            await queries.deleteOldBlocks('blocks');
+        }
         await queries.create('blocks', blocks);
         console.log(`Saved blocks ${blocks.map(b => b.number).join(', ')}`);
     }

@@ -21,6 +21,11 @@ module.exports = {
             .returning('number')
             .then((record) => record[0].max);
     },
+    getBlockCount(table) {
+        return database(table)
+            .count('number')
+            .then((record) => record[0]);
+    },
     deleteOldBlocks(table) {
         return database(table)
             .orderBy('number')

@@ -20,6 +20,11 @@ module.exports = {
       .returning('number')
       .then((record: any) => record[0].max)
   },
+  getBlockCount(table: string) {
+    return database(table)
+      .count('number')
+      .then((record: any) => record[0])
+  },
   deleteOldBlocks(table: string) {
     return database(table)
       .orderBy('number')
