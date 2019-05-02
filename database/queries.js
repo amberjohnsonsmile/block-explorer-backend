@@ -24,7 +24,7 @@ module.exports = {
     getBlockCount(table) {
         return database(table)
             .count('number')
-            .then((record) => record[0]);
+            .then((record) => record[0].count);
     },
     deleteOldBlocks(table) {
         return database(table)
