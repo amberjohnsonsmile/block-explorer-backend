@@ -19,5 +19,11 @@ module.exports = {
       .max('number')
       .returning('number')
       .then((record: any) => record[0].max)
+  },
+  deleteOldBlocks(table: string) {
+    return database(table)
+      .orderBy('number')
+      .limit(10)
+      .del()
   }
 }

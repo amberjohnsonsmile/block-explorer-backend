@@ -20,6 +20,7 @@ export async function scan() {
       current++
     }
 
+    await queries.deleteOldBlocks('blocks')
     await queries.create('blocks', blocks)
     console.log(`Saved blocks ${blocks.map(b => b.number).join(', ')}`)
   }

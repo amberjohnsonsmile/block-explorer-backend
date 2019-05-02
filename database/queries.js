@@ -20,6 +20,12 @@ module.exports = {
             .max('number')
             .returning('number')
             .then((record) => record[0].max);
+    },
+    deleteOldBlocks(table) {
+        return database(table)
+            .orderBy('number')
+            .limit(10)
+            .del();
     }
 };
 //# sourceMappingURL=queries.js.map
