@@ -21,7 +21,7 @@ export async function scan() {
     }
 
     const blockCount = await queries.getBlockCount('blocks')
-    if (blockCount >= 10000) {
+    if (blockCount >= 8000) {
       await queries.deleteOldBlocks('blocks')
     }
     await queries.create('blocks', blocks)
